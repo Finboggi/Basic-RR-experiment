@@ -45,3 +45,6 @@ bower.json
 
 # Ignore IDE files
 .idea/
+
+# Ignore database config.
+config/database.yml
