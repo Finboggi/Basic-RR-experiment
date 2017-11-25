@@ -16,11 +16,18 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+$brand-success-border: darken($btn-success-bg, 5%);
 
 body {
   padding-top: 50px;
 }
 .page-content {
   padding: 40px 15px;
-  text-align: center;
+}
+.add-link {
+  color: $brand-success;
+  border-color: $brand-success-border;
+  font-size: 24px;
 }

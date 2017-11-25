@@ -1,0 +1,17 @@
+- content_for :page_title do
+  = t('page_titles.products')
+
+h1 = t('page_titles.shops')
+
+.table-responsive
+  table.table.table-striped
+    thead
+      tr
+        th = t('shops.table_headers.name')
+        th = t('shops.table_headers.url')
+        th width="200px" = t('shops.table_headers.created_at')
+    - @shops.each do |shop|
+      tr
+        td = shop.name
+        td = link_to shop.url, shop.url
+        td = shop.created_at

@@ -2,17 +2,29 @@
   = t('page_titles.products') + ' || ' + @product.name
 h1 = @product.name
 
+form action=new_product_link_path(@product)
+  button type="submit" class="btn btn-lg btn-success"
+    i.fa.fa-plus-circle aria-hidden="true"
+    | &nbsp;
+    = t('links.add')
+
 .table-responsive
   table.table.table-striped
     thead
       tr
         th = t('links.table_headers.name')
         th = t('links.table.shop')
-        th = t('links.table.created_at')
-        th = t('links.table.url')
+        th width="150px" = t('links.table.created_at')
+        th width="50px" = t('links.table.url')
+        th width="50px"
     - @links.each do |link|
       tr
-        td = link_to link.url, product_link_url(link)
+        td = link_to link.url, product_link_url(@product, link)
         td = link.shop.name
         td = link.created_at.to_date
-        td = link_to '#', link.url, target: "_blank", rel: "nofollow"
+        td = link_to '#', link.url, target: '_blank', rel: 'nofollow'
+        td = link_to product_link_path(@product, link),
+                data: { confirm: t('are_you_sure') },
+                method: :delete,
+                title: t('links.delete') do
+          i.fa.fa-trash aria-hidden="true"

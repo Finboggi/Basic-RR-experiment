@@ -11,13 +11,13 @@ html lang='ru'
     nav.navbar.navbar-inverse.navbar-fixed-top
       .container
         .navbar-header
-          = link_to I18n.t('product_name'), '/', class: 'navbar-brand'
+          = link_to I18n.t('product_name'), root_path, class: 'navbar-brand'
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
             li class=('active' if current_page?(products_path))
               = link_to I18n.t('page_titles.products'), products_path
-            li
-              a hre="#" Shops
+            li class=('active' if current_page?(shops_path))
+              = link_to I18n.t('page_titles.shops'), shops_path
     div.container
       div.page-content
         = yield

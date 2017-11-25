@@ -1,0 +1,9 @@
+h1 Add new link to product
+
+= form_for @link, {url: product_links_path} do |f|
+  = f.label :url
+  = f.text_field :url
+  = f.label :shop_id
+  = f.select :shop_id, @shops.map { |shop| [shop.name, shop.id] }
+  = f.hidden_field :product_id
+  = f.submit

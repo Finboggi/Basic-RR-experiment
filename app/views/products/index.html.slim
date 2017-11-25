@@ -1,14 +1,28 @@
 - content_for :page_title do
   = t('page_titles.products')
+
 h1 = t('page_titles.products')
+
+form action=new_product_path
+  button type="submit" class="btn btn-lg btn-success"
+    i.fa.fa-plus-circle aria-hidden="true"
+    | &nbsp;
+    = t('products.add')
+
 
 .table-responsive
   table.table.table-striped
     thead
       tr
         th = t('products.table_headers.name')
-        th = t('products.table_headers.created_at')
+        th width="150px" = t('products.table_headers.created_at')
+        th width="50px"
     - @products.each do |product|
       tr
         td = link_to product.name, product
         td = product.created_at.to_date
+        td = link_to product_path(product),
+          data: {confirm: t('are_you_sure')},
+          method: :delete,
+          title: t('products.delete') do
+          i.fa.fa-trash aria-hidden="true"

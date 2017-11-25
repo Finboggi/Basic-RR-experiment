@@ -34,11 +34,14 @@ en:
   page_titles:
     products: Products list
     links: Links of the product
+    shops: Shops list
 
   products:
     table_headers:
       name: Product name
       created_at: Created at
+    add: Add new product
+    delete: Delete this product
 
   links:
     table_headers:
@@ -46,11 +49,21 @@ en:
       shop: Shop
       created_at: Created at
       url: \#
+    add: Add new link to product
+    delete: Delete this link
 
   prices:
     table_headers:
       parced_at: Date
       value: Value
     nil_value: n/a
+
+  shops:
+    table_headers:
+      name: Shop name
+      url: link
+      created_at: Created at
+
+  are_you_sure: Are you shure?
 
 
