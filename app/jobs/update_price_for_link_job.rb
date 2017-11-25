@@ -1,3 +1,5 @@
+require 'net/http'
+
 class UpdatePriceForLinkJob < ApplicationJob
   def perform(link)
     url = URI(link.url)

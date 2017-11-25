@@ -30,4 +30,27 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  product_name: Basic RR experiment
+  page_titles:
+    products: Products list
+    links: Links of the product
+
+  products:
+    table_headers:
+      name: Product name
+      created_at: Created at
+
+  links:
+    table_headers:
+      name: Link
+      shop: Shop
+      created_at: Created at
+      url: \#
+
+  prices:
+    table_headers:
+      parced_at: Date
+      value: Value
+    nil_value: n/a
+
+

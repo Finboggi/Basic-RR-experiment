@@ -1,0 +1,23 @@
+doctype html
+html lang='ru'
+  head
+    title = yield(:page_title)
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          = link_to I18n.t('product_name'), '/', class: 'navbar-brand'
+        #navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li class=('active' if current_page?(products_path))
+              = link_to I18n.t('page_titles.products'), products_path
+            li
+              a hre="#" Shops
+    div.container
+      div.page-content
+        = yield

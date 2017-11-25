@@ -1,0 +1,18 @@
+- content_for :page_title do
+  = t('page_titles.products') + ' || ' + @product.name
+h1 = @product.name
+
+.table-responsive
+  table.table.table-striped
+    thead
+      tr
+        th = t('links.table_headers.name')
+        th = t('links.table.shop')
+        th = t('links.table.created_at')
+        th = t('links.table.url')
+    - @links.each do |link|
+      tr
+        td = link_to link.url, product_link_url(link)
+        td = link.shop.name
+        td = link.created_at.to_date
+        td = link_to '#', link.url, target: "_blank", rel: "nofollow"

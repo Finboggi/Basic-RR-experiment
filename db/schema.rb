@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20171112115559) do
   create_table "prices", force: :cascade do |t|
     t.bigint "link_id", null: false
     t.datetime "parsed_at", null: false
-    t.float "value", null: false
+    t.float "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["link_id", "parsed_at"], name: "index_prices_on_link_id_and_parsed_at", unique: true

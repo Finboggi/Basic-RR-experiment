@@ -10,10 +10,11 @@ class Shop < ApplicationRecord
   private
 
   def parse_value_from_ulmart(html_content)
-    price_css_selector = '.panel-body .b-product-card__price .b-price__num.js-price'
+    price_css_selector = 'section[itemtype="http://schema.org/Product"] meta[itemprop="price"]'
 
-    value_string = Nokogiri::HTML(html_content).css(price_css_selector).text
+    price_tag = Nokogiri::HTML(html_content).css(price_css_selector)
+    price_value = price_tag.attribute('content').value
 
-    value_string.scan(/\d+/).join.to_f
+    price_value.to_f
   end
 end
