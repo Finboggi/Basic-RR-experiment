@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe UpdatePriceForLinkJob do
+describe UpdatePriceForLinkJob do
   describe '#perform' do
-    let(:perform) { described_class.new.perform(link) }
+    let(:perform) { described_class.new.perform(link.id) }
     let(:shop) { create :shop, :ulmart }
     let(:link) { create :link, shop: shop }
     let(:response) { File.read('spec/fixtures/ulmart_product_page.html') }

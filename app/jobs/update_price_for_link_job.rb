@@ -1,7 +1,8 @@
 require 'net/http'
 
 class UpdatePriceForLinkJob < ApplicationJob
-  def perform(link)
+  def perform(link_id)
+    link = Link.find(link_id)
     url = URI(link.url)
     html_content = Net::HTTP.get(url)
 
