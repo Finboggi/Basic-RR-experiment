@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :prices do
   namespace :update do
     desc 'Schedule jobs for prices update'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -51,4 +53,11 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+
+  # Ensure you have defined default url options in your environments files. Here
+  # is an example of default_url_options appropriate for a development environment
+  # in config/environments/development.rb:
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # In production, :host should be set to the actual host of your application.
 end

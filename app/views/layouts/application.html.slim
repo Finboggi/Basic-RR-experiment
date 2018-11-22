@@ -20,5 +20,7 @@ html lang='ru'
               = link_to I18n.t('page_titles.shops'), shops_path
     div.container
       div.page-content
+        p.notice = notice
+        p.alert = alert
         = yield
 

@@ -1,19 +1,21 @@
+# frozen_string_literal: true
+
 class LinksController < ApplicationController
   def show
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
     @product = @link.product
     @shop = @link.shop
     @prices = @link.prices
   end
 
   def new
-    @product = Product.find(params[:product_id])
-    @link = Link.new(product: @product)
+    @product = current_user.products.find(params[:product_id])
+    @link = current_user.links.new(product: @product)
     @shops = Shop.all
   end
 
   def create
-    link = Link.create(link_params)
+    link = current_user.links.create(link_params)
 
     if link.persisted?
       redirect_to product_path(link.product)
@@ -23,7 +25,7 @@ class LinksController < ApplicationController
   end
 
   def destroy
-    link = Link.find(params[:id]).destroy
+    link = current_user.links.find(params[:id]).destroy
 
     redirect_to product_path(link.product)
   end

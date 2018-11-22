@@ -1,5 +1,6 @@
-class Shop < ApplicationRecord
+# frozen_string_literal: true
 
+class Shop < ApplicationRecord
   def parse_value_from_html(html_content)
     case name
     when 'Ulmart'

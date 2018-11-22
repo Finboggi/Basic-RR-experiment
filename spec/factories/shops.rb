@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :shop do
     sequence(:url) { |i| "http://foo-#{i}.bar/" }

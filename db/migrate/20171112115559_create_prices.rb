@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreatePrices < ActiveRecord::Migration[5.1]
   def change
     create_table :prices do |t|
@@ -8,6 +10,6 @@ class CreatePrices < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    add_index :prices, [:link_id, :parsed_at], unique: true
+    add_index :prices, %i[link_id parsed_at], unique: true
   end
 end

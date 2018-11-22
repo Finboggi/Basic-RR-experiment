@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateLinks < ActiveRecord::Migration[5.1]
   def change
     create_table :links do |t|
@@ -8,6 +10,6 @@ class CreateLinks < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    add_index :links, [:product_id, :shop_id], unique: true
+    add_index :links, %i[product_id shop_id], unique: true
   end
 end

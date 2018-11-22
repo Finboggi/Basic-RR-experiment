@@ -18,10 +18,10 @@ User can create and delete products to maintain product list
 Add parser for ulmart.ru for user can add links to that store
 User can add link to product's store page to parse product price
 Add rake task to periodically run price parsing for all saved links
+User can register and authorize to have personal products and maintain them
 
 # Stories in backlog
 
-User can register and authorize to have personal products and maintain them
 Authorized user can open price list page to see history of price changes for his product
 Authorized user can set desired price for each product to be notified via email if price reaches it
 Authorized user can choose notification channel between email notification and web interface notifications

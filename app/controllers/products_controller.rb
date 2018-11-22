@@ -1,19 +1,21 @@
+# frozen_string_literal: true
+
 class ProductsController < ApplicationController
   def index
     @products = product_list
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = product_list.find(params[:id])
     @links = @product.links
   end
 
   def new
-    @product = Product.new
+    @product = product_list.new
   end
 
   def create
-    product = Product.create(product_params)
+    product = product_list.create(product_params)
 
     if product.persisted?
       redirect_to products_path
@@ -23,7 +25,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    Product.find(params[:id]).destroy
+    product_list.find(params[:id]).destroy
 
     redirect_to products_path
   end
@@ -31,7 +33,7 @@ class ProductsController < ApplicationController
   private
 
   def product_list
-    Product.all
+    current_user.products
   end
 
   def product_params
