@@ -2,13 +2,4 @@
   = link_title
 h1 = link_title
 
-.table-responsive
-  table.table.table-striped
-    thead
-      tr
-        th = t('prices.table_headers.parced_at')
-        th = t('prices.table_headers.value')
-    - @prices.each do |price|
-      tr
-        td = price.created_at
-        td = price.value || t('prices.nil_value')
+= render partial: 'shared/prices_list', locals: {prices: @prices}

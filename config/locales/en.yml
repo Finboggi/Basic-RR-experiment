@@ -35,6 +35,7 @@ en:
     products: Products list
     links: Links of the product
     shops: Shops list
+    prices: Prices of the product
 
   products:
     table_headers:
@@ -42,6 +43,8 @@ en:
       created_at: Created at
     add: Add new product
     delete: Delete this product
+    show:
+      to_prices_history: Show prices history
 
   links:
     table_headers:
@@ -54,9 +57,12 @@ en:
 
   prices:
     table_headers:
+      link: Link
       parced_at: Date
       value: Value
     nil_value: n/a
+    show:
+      to_product: Back to product
 
   shops:
     table_headers:

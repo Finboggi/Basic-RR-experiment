@@ -1,0 +1,14 @@
+.table-responsive
+  table.table.table-striped
+    thead
+      tr
+        - if @show_links_column
+          th = t('prices.table_headers.link')
+        th = t('prices.table_headers.parced_at')
+        th = t('prices.table_headers.value')
+    - prices.each do |price|
+      tr
+        - if @show_links_column
+          td = link_to price.link.url, product_link_url(@product, price.link)
+        td = price.created_at
+        td = price.value || t('prices.nil_value')

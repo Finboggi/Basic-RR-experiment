@@ -8,6 +8,9 @@ form action=new_product_link_path(@product)
     | &nbsp;
     = t('links.add')
 
+.btn.btn-lg.btn-default
+  = link_to t('.to_prices_history'), product_prices_url(@product)
+
 .table-responsive
   table.table.table-striped
     thead

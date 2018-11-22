@@ -3,5 +3,15 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:product) { create :product }
+
+  describe '#prices' do
+    describe 'returns list of links related to user\'s products' do
+      let(:link) { create :link, product: product }
+      let!(:price) { create :price, link: link }
+      let!(:price_other_product) { create :price }
+
+      it { expect(product.prices).to contain_exactly(price) }
+    end
+  end
 end

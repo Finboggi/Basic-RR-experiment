@@ -8,8 +8,8 @@ RSpec.describe User, type: :model do
   describe '#links' do
     describe 'returns list of links related to user\'s products' do
       let(:product) { create :product, user: user }
-      let(:link) { create :link, product: product }
-      let(:link_other_user) { create :link }
+      let!(:link) { create :link, product: product }
+      let!(:link_other_user) { create :link }
 
       it { expect(user.links).to contain_exactly(link) }
     end

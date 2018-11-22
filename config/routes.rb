@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :links
+    resources :prices, only: :index
   end
+
   resources :shops, only: :index
 end
