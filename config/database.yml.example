@@ -3,8 +3,8 @@ default: &default
   encoding: unicode
   pool: 5
   host: localhost
-  login: preacc
-  password: preacc
+  login: login
+  password: password
 
 production: &production
   <<: *default
