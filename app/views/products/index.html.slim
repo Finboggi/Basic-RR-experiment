@@ -14,9 +14,10 @@ form action=new_product_path
   table.table.table-striped
     thead
       tr
-        th = t('products.table_headers.name')
-        th width="150px" = t('products.table_headers.created_at')
-        th width="50px"
+        th = t('.table_headers.name')
+        th width="100px" = t('.table_headers.created_at')
+        th width="25px"
+        th width="25px"
     - @products.each do |product|
       tr
         td = link_to product.name, product
@@ -24,5 +25,8 @@ form action=new_product_path
         td = link_to product_path(product),
           data: {confirm: t('are_you_sure')},
           method: :delete,
-          title: t('products.delete') do
+          title: t('.delete') do
           i.fa.fa-trash aria-hidden="true"
+        td = link_to edit_product_path(product),
+          title: t('.edit') do
+          i.fa.fa-edit aria-hidden="true"

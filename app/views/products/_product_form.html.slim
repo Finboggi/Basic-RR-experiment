@@ -1,0 +1,8 @@
+= form_for @product do |product_fields|
+  = product_fields.label :name
+  = product_fields.text_field :name
+  = product_fields.fields_for :setting_attributes, product_settings do |settings_fields|
+    = settings_fields.label :price_limit
+    = settings_fields.number_field :price_limit
+
+  = product_fields.submit

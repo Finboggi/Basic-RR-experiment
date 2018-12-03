@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181025054625) do
+ActiveRecord::Schema.define(version: 20181122135908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +34,14 @@ ActiveRecord::Schema.define(version: 20181025054625) do
     t.datetime "updated_at", null: false
     t.index ["link_id", "parsed_at"], name: "index_prices_on_link_id_and_parsed_at", unique: true
     t.index ["link_id"], name: "index_prices_on_link_id"
+  end
+
+  create_table "product_settings", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.float "price_limit", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_settings_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -68,5 +74,6 @@ ActiveRecord::Schema.define(version: 20181025054625) do
   add_foreign_key "links", "products"
   add_foreign_key "links", "shops"
   add_foreign_key "prices", "links"
+  add_foreign_key "product_settings", "products"
   add_foreign_key "products", "users"
 end

@@ -20,10 +20,10 @@ User can add link to product's store page to parse product price
 Add rake task to periodically run price parsing for all saved links
 User can register and authorize to have personal products and maintain them
 Authorized user can open price list page to see history of price changes for his product
+Authorized user can set desired price for each product to be notified via email if price reaches it
 
 # Stories in backlog
 
-Authorized user can set desired price for each product to be notified via email if price reaches it
 Authorized user can choose notification channel between email notification and web interface notifications
 Authorized user can see web interface notifications pop-ups if he choose web interface notifications channel
 Authorized user can see history of events with his products on notifications list page

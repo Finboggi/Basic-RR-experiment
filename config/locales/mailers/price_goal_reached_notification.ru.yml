@@ -1,0 +1,7 @@
+ru:
+  price_goal_reached_notification_mailer:
+    fixed_goal:
+      subject: Цена товара упала до заданной границы
+      description: Цена товара %{product_name} упала до заданной границы и составила %{price_value}
+      product_in_shop: Перейти на страницу товара в магазине
+      manage_product: Перейти к управлению мониторингом за ценами на товар

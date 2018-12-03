@@ -1,0 +1,5 @@
+mail:
+  reply: Price Monitoring <price_monitoring_reply@example.com>
+  from: Price Monitoring <price_monitoring@example.com>
+
+host: https://localhost:3000

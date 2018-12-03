@@ -38,13 +38,16 @@ en:
     prices: Prices of the product
 
   products:
-    table_headers:
-      name: Product name
-      created_at: Created at
-    add: Add new product
-    delete: Delete this product
+    index:
+      table_headers:
+        name: Product name
+        created_at: Created at
+      add: Add new product
+      delete: Delete this product
+      edit: Edit this product
     show:
       to_prices_history: Show prices history
+      price_limit_label: Price limit
 
   links:
     table_headers:

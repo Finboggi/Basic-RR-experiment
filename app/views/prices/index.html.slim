@@ -7,4 +7,4 @@ h1 = t('page_titles.prices')
 .btn.btn-lg.btn-default
   = link_to t('.to_product'), product_url(@product)
 
-= render partial: 'shared/prices_list', locals: { prices: @prices }
+= render 'shared/prices_list', prices: @prices

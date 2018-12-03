@@ -1,0 +1,8 @@
+en:
+  mailers:
+    price_goal_reached_notification_mailer:
+      fixed_goal:
+        subject: The price dropped below predetermined limit
+        description: The %{product_name}`s price drop below %{limit} reaching a low of %{price_value}
+        product_in_shop: Go to the product page in the store
+        manage_product: Go to the monitoring management page

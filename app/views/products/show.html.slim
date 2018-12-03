@@ -1,15 +1,20 @@
 - content_for :page_title do
   = t('page_titles.products') + ' || ' + @product.name
+
 h1 = @product.name
 
-form action=new_product_link_path(@product)
-  button type="submit" class="btn btn-lg btn-success"
-    i.fa.fa-plus-circle aria-hidden="true"
-    | &nbsp;
-    = t('links.add')
+#control_panel
+  form action=new_product_link_path(@product)
+    button type="submit" class="btn btn-lg btn-success"
+      i.fa.fa-plus-circle aria-hidden="true"
+      | &nbsp;
+      = t('links.add')
 
-.btn.btn-lg.btn-default
-  = link_to t('.to_prices_history'), product_prices_url(@product)
+  .btn.btn-lg.btn-default
+    = link_to t('.to_prices_history'), product_prices_url(@product)
+
+p
+  | #{t('.price_limit_label')}: #{@product.settings.price_limit}
 
 .table-responsive
   table.table.table-striped

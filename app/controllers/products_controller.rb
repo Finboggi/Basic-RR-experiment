@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 class ProductsController < ApplicationController
+  before_action :find_product, only: %w[show edit update]
+
   def index
     @products = product_list
   end
 
   def show
-    @product = product_list.find(params[:id])
     @links = @product.links
   end
 
@@ -24,6 +25,16 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @product.update(product_params)
+      redirect_to products_path
+    else
+      redirect_to edit_product_path(@product)
+    end
+  end
+
   def destroy
     product_list.find(params[:id]).destroy
 
@@ -37,6 +48,10 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name)
+    params.require(:product).permit(:name, settings_attributes: [:price_limit])
+  end
+
+  def find_product
+    @product = product_list.find(params[:id])
   end
 end

@@ -30,5 +30,14 @@ module BasicRrExperiment
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.active_job.queue_adapter = :sidekiq
+
+    config.action_mailer.default_options = {
+      from: Settings.mail.from,
+      reply_to: Settings.mail.reply,
+      template_path: Proc.new { "mailers/#{self.class.name.underscore}" }
+    }
+
+    # Default host needs to be set in mailer
+    config.action_mailer.default_url_options = {host: Settings.host}
   end
 end
